@@ -10,4 +10,3 @@ def p2f(name):
 		page.save(filename=str(i)+".png")
 		s=segment.image_processing(str(i)+".png")
 		return(s)
-	
