@@ -41,13 +41,12 @@ def image_processing(image_name):
 			s=char_reg.predict('vertical/image_' + str(begin) + str(begin_col) + '.jpg')
 			line += s
 		line+='$s'
+		#print(line)
 		strg +=line
-		strg+='\n'
 	return(strg)
 		
  		
 		
-
 
 
 
