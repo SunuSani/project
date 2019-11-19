@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+ background-image: url("images.jpeg");
+     }
+button{
+	display: block;
+	border: none;
+  	color: white;
+	background-color: green;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	font-size: 18px;
+}
+body{
+padding: 20px 20px 20px 20px;
+margin-top: 10px;
+
+}
+div {
+	border: 1px solid black;
+	padding: 20px 20px 20px 20px;
+}
+
+</style>
+<body>
+ <form name="in"action="/" enctype="multipart/form-data" method="post">
+    
+<table>
+<tr>
+<center>
+            <h1 class="tool__header__title">Convert Equation to latex</h1>
+            <h2 class="tool__header__subtitle">Make  files easy to read by converting them to latex.</h2></center>
+</tr>
+<tr></tr><tr></tr>
+<tr>
+<td>
+<label>Upload your file</label>
+<input type="file" name="myFile" accept=".pdf"><br><br/>
+<center><button type="submit" id="p_btn">Convert</button></center>
+</td>
+</form>
+<td>
+<div><textarea id="input"rows="20" cols="100">
+{{value}}</textarea><br><br></div>
+</td>
+</tr>
+</table>
+</body>
+<script>
+document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+};
+}
+</script>
+</html>
