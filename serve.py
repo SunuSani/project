@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from werkzeug import secure_filename
 import pdf2image
 app = Flask(__name__)
 
@@ -9,12 +10,11 @@ def index():
 @app.route('/',methods = ['POST', 'GET'])
 def result():
 	if request.method == 'POST':
-		result = request.files.get('myFile')
-		nme=result.filename
-		resul=pdf2image.p2f(nme)
+		f = request.files['myFile']
+		f.save(secure_filename(f.filename))
+		name=f.filename
+		resul=pdf2image.p2f(name)
 		return render_template('index.html',value=resul)
-		#return ' %s  ' % (nme)
-
-
+		
 if __name__ == '__main__':
    app.run(debug = True)
