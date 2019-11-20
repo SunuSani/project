@@ -40,7 +40,7 @@ def image_processing(image_name):
 			imageio.imwrite('vertical/image_' + str(begin) + str(begin_col) + '.jpg', sub_sub_image)
 			s=char_reg.predict('vertical/image_' + str(begin) + str(begin_col) + '.jpg')
 			line += s
-		line+='$s'
+		line+='$'
 		#print(line)
 		strg +=line
 	return(strg)
