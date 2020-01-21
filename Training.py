@@ -6,9 +6,7 @@ from keras.models import Sequential
 from keras.layers import Dropout, Flatten, Dense, Activation
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
 from keras import callbacks
-import time
 
-start = time.time()
 
 
 epochs = 50
@@ -91,15 +89,4 @@ if not os.path.exists(target_dir):
 model.save('./models/model.h5')
 model.save_weights('./models/weights.h5')
 
-#Calculate execution time
-end = time.time()
-dur = end-start
 
-if dur<60:
-    print("Execution Time:",dur,"seconds")
-elif dur>60 and dur<3600:
-    dur=dur/60
-    print("Execution Time:",dur,"minutes")
-else:
-    dur=dur/(60*60)
-    print("Execution Time:",dur,"hours")
