@@ -4,7 +4,7 @@ from keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 from keras.models import Sequential, load_model
 import time
 
-start = time.time()
+
 
 #Define Path
 model_path = './models/model.h5'
@@ -44,15 +44,3 @@ for i, ret in enumerate(os.walk(test_path)):
     result = predict(ret[0] + '/' + filename)
     print(" ")
 
-#Calculate execution time
-end = time.time()
-dur = end-start
-
-if dur<60:
-    print("Execution Time:",dur,"seconds")
-elif dur>60 and dur<3600:
-    dur=dur/60
-    print("Execution Time:",dur,"minutes")
-else:
-    dur=dur/(60*60)
-    print("Execution Time:",dur,"hours")
